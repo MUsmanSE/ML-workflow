@@ -35,8 +35,7 @@ jobs:
         python train.py
 
     - name: Upload model artifacts
-      uses: actions/download-artifact@v4
-      # uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v3      # <-- This is where you add it
       with:
         name: trained-model
         path: |
