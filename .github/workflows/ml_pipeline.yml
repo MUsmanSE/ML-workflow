@@ -33,8 +33,14 @@ jobs:
         run: |
           python train.py
 
-      - name: Upload model artifacts
-        uses: actions/upload-artifact@v3
+      # - name: Upload model artifacts
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: trained-model
+      #     path: |
+      #       model.joblib
+      #       scaler.joblib
+      - uses: actions/download-artifact@v4
         with:
           name: trained-model
           path: |
