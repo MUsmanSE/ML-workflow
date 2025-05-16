@@ -40,10 +40,10 @@ jobs:
       #     path: |
       #       model.joblib
       #       scaler.joblib
-      - uses: actions/download-artifact@v4
+      - name: Download model artifacts
+        uses: actions/download-artifact@v4
         with:
           name: trained-model
-          path: |
-            model.joblib
-            scaler.joblib
+          path: ./model_files
+
 
