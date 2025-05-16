@@ -1,4 +1,5 @@
 name: ML Pipeline
+uses: actions/upload-artifact@v3
 
 on:
   push:
@@ -34,7 +35,7 @@ jobs:
         python train.py
 
     - name: Upload model artifacts
-      uses: actions/upload-artifact@v3.1.2
+    - uses: actions/download-artifact@v4
       with:
         name: trained-model
         path: |
