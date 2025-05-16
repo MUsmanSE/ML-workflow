@@ -1,15 +1,14 @@
 name: ML Pipeline
 
-# When to trigger this workflow
 on:
   push:
     branches:
-      - main      # or your default branch
+      - main  # change if your default branch is different
   pull_request:
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # Use latest Ubuntu runner
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repo
@@ -35,7 +34,7 @@ jobs:
         python train.py
 
     - name: Upload model artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v3.1.2
       with:
         name: trained-model
         path: |
