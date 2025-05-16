@@ -3,7 +3,7 @@ name: ML Pipeline
 on:
   push:
     branches:
-      - main   # Change if your default branch is different
+      - main
   pull_request:
 
 jobs:
@@ -40,3 +40,4 @@ jobs:
           path: |
             model.joblib
             scaler.joblib
+
