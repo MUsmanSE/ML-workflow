@@ -4,13 +4,11 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 
 def load_data():
-    # You can also download from URL
     url = "https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv"
     data = pd.read_csv(url)
     return data
 
 def preprocess_data(df):
-    # Fix FutureWarning by avoiding inplace chained assignment
     df.loc[:, 'Age'] = df['Age'].fillna(df['Age'].median())
     df.loc[:, 'Embarked'] = df['Embarked'].fillna(df['Embarked'].mode()[0])
 

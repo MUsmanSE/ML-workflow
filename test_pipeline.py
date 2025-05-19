@@ -12,7 +12,7 @@ def test_missing_values_handled():
         'SibSp': [1, 0, 0],
         'Parch': [0, 0, 0],
         'Fare': [7.25, 71.2833, 8.05],
-        'Embarked': ['S', None, 'Q'],  # Make sure Q and S exist here
+        'Embarked': ['S', None, 'Q'],
         'Survived': [0, 1, 0]
     })
     X, y, scaler = preprocess_data(df)
@@ -33,7 +33,6 @@ def test_preprocess_output_shape():
     })
     X, y, scaler = preprocess_data(df)
     assert X.shape[0] == len(df)
-    # Number of features should be 8 as per preprocessing features list
     assert X.shape[1] == 8
 
 
